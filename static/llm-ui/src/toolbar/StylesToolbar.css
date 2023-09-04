@@ -1,0 +1,56 @@
+.toolbar-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.toolbar-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.toolbar-justify {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbar-left > .toolbar-item,
+.toolbar-left > div {
+  margin-left: 10px;
+}
+
+.toolbar-left > .toolbar-item:first-child,
+.toolbar-left > div:first-child {
+  margin-left: 0px;
+}
+
+.toolbar-right >  .toolbar-item {
+  margin-left: 10px;
+}
+
+.toolbar-right >  .toolbar-item:first-child {
+  margin-left: 0px;
+}
+
+.toolbar-justify {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar-center >  .toolbar-item {
+  margin-left: 5px;
+  margin-right: 5px;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "confluence-content-byline-custom-ui-static",
+  "version": "0.1.16",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "@atlaskit/button": "^16.9.3",
+    "@atlaskit/css-reset": "^6.5.4",
+    "@atlaskit/section-message": "^6.4.11",
+    "@atlaskit/spinner": "^15.5.4",
+    "@forge/bridge": "2.6.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.7",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

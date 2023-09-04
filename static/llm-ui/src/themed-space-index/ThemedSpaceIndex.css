@@ -1,0 +1,19 @@
+.themedSpaceIndexContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+.themedSpaceIndexGroup {
+  width: 48%;
+  margin: 10px 0px;
+}
+
+.contentGroupList {
+  margin-left: -24px;
+}

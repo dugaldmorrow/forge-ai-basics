@@ -1,0 +1,53 @@
+modules:
+  confluence:spacePage:
+    - key: themed-space-index
+      resource: llm-ui
+      resolver:
+        function: resolver-fn
+      title: Themed space index
+      route: themed-space-index
+      icon: resource:llm-ui;icons/summariser.svg
+  confluence:contentBylineItem:
+    - key: content-summariser
+      resource: llm-ui
+      resolver:
+        function: resolver-fn
+      viewportSize: large
+      title: Summarise
+      icon: resource:llm-ui;icons/summariser.svg
+  consumer:
+    - key: storage-cleanup-consumer
+      queue: storage-cleanup-queue
+      resolver:
+        function: storage-cleanup-fn
+        method: storageCleanupListener
+  function:
+    - key: resolver-fn
+      handler: uiResolver.handler
+    - key: storage-cleanup-fn
+      handler: storageCleanupQueueOps.storageCleanupHandler
+resources:
+  # both app UIs share the same static front end
+  - key: llm-ui
+    path: static/llm-ui/build
+permissions:
+  scopes:
+    - storage:app
+    - read:page:confluence
+    - write:page:confluence
+    - search:confluence
+    - read:confluence-space.summary
+  content:
+    scripts:
+      - unsafe-inline
+      - unsafe-hashes
+    styles:
+      - unsafe-inline
+  external:
+    fetch:
+      backend:
+        - https://api.openai.com
+app:
+  id: ari:cloud:ecosystem::app/81071544-150c-46a3-bfd4-7dc5e0a478f6
+  features:
+    autoUserConsent: true
