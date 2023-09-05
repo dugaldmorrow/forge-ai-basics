@@ -194,7 +194,7 @@ class ThemedSpaceIndexCreator {
   }
 
   _buildCreateIndexPrompt = (searchResults: ConfluenceContentSearchResult[]): string => {
-    let prompt = `Group the following topics into themes with the results formatted as nested bullet point lists where the outer list identifies the themes and the inner lists identified the topics matching the themes and each theme is prefixed with "theme:" and each topic is prefixed with "topic:"`;
+    let prompt = `Group the following topics into themes with the results formatted as nested bullet point lists where the outer list identifies the themes and the inner lists identifies the topics matching the themes and each theme is prefixed with "theme:" and each topic is prefixed with "topic:"`;
     for (const searchResult of searchResults) {
       if (searchResult && searchResult.content && searchResult.content.type === 'page') {
         prompt = `${prompt}\n* ${searchResult.content.title}`
