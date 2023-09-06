@@ -91,8 +91,7 @@ function PageSummariserView() {
       const prefix = data.status === 200 ? 'Summary' : 'ERROR';
       return (
         <>
-          <strong>{prefix}</strong>:
-          {data.message}{cacheStatusSuffix}
+          <strong>{prefix}</strong>: {data.message}{cacheStatusSuffix}
         </>
       );
     } else {

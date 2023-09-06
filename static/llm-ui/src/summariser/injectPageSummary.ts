@@ -7,7 +7,7 @@ export const injectPageSummary = async (contentId: string, summaryText: string):
     const page = await pageRequestResponse.json() as PageData;
     const body = page.body as StorageBody
     const notePanelContent = `<p><strong>Summary</strong>: ${summaryText}</p>`;
-    const notePanelInnerDiv = `<div class=\"panelContent\" style=\"background-color: rgb(234,230,255);\">\n<p><strong>Summary</strong>: my summary</p>\n</div>`;
+    const notePanelInnerDiv = `<div class=\"panelContent\" style=\"background-color: rgb(234,230,255);\">\n<p><strong>Summary</strong>: ${summaryText}</p>\n</div>`;
     const notePanelOuterDiv = `<div class=\"panel conf-macro output-block\" style=\"background-color: rgb(234,230,255);border-color: rgb(153,141,217);border-width: 1.0px;\">${notePanelInnerDiv}</div>`;
     const notePanel = `<ac:adf-extension><ac:adf-node type=\"panel\"><ac:adf-attribute key=\"panel-type\">note</ac:adf-attribute><ac:adf-content>${notePanelContent}</ac:adf-content></ac:adf-node><ac:adf-fallback>${notePanelOuterDiv}</ac:adf-fallback></ac:adf-extension>`;
     const enhancedBodyContent = `${notePanel}${body.storage.value}`;
