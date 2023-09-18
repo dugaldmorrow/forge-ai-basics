@@ -20,6 +20,8 @@ resolver.define("storageCleanupListener", async (queueItem) => {
       console.log(`Deleting cache result for content ID ${eventPayload.contentId}...`);
       await summariserStorageUtil.deleteCacheResult(eventPayload.contentId);
     } else {
+      // 1. When will this line be executed?
+      // 2. Where does this retry enqueuing happen? 
       console.log(`Cache result for content ID ${eventPayload.contentId} has not expired yet (there will be another event queued to clean it up).`);
     }
   } else {
